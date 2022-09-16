@@ -16,10 +16,10 @@ permissions:
   pages: write
   id-token: write
 
-# Allow one concurrent deployment
+# Disallow one concurrent deployment
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   # Single deploy job since we're just deploying
@@ -31,7 +31,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      # actions/download-artifact@v3 is not allowed across workflows
+      # actions/download-artifact@v3 does not allow sharing across workflows
       - name: Download artifact
         id: download-artifact
         uses: dawidd6/action-download-artifact@v2
