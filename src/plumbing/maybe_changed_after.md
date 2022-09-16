@@ -3,7 +3,7 @@
 # 在某个修订之后可能已更改
 
 ```rust,no_run,noplayground
-{{#include ../../../src/plumbing.rs:maybe_changed_after}}
+{{#include ../../salsa/src/plumbing.rs:maybe_changed_after}}
 ```
 
 `maybe_changed_after` 计算查询的值在给定的修订后是否发生了更改。换句话说，如果查询 `Q` 的值在修订 `(R+1)..R_now` 中可能已经改变，则

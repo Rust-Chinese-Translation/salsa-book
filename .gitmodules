@@ -1,0 +1,3 @@
+[submodule "salsa"]
+	path = salsa
+	url = https://github.com/salsa-rs/salsa.git

@@ -29,7 +29,7 @@ eprintln!("Expression = {:?}", expr.debug(db));
 为了保持一致性，有时实现 `DebugWithDb` 是很有用的，即使对于 `Op` 这样只是普通枚举的类型也是如此。你可以这样做：
 
 ```rust,ignore
-{{#include ../../../calc-example/calc/src/ir.rs:op_debug_impl}}
+{{#include ../../salsa/examples-2022/calc/src/ir.rs:op_debug_impl}}
 ```
 
 ## 编写单元测试
@@ -39,13 +39,13 @@ eprintln!("Expression = {:?}", expr.debug(db));
 下面的 `parse_string` 函数创建一个数据库，设置源文本，然后调用了解析器：
 
 ```rust,ignore
-{{#include ../../../calc-example/calc/src/parser.rs:parse_string}}
+{{#include ../../salsa/examples-2022/calc/src/parser.rs:parse_string}}
 ```
 
 结合 [`expect-test`] crate，我们就可以编写这样的单元测试：
 
 ```rust,ignore
-{{#include ../../../calc-example/calc/src/parser.rs:parse_print}}
+{{#include ../../salsa/examples-2022/calc/src/parser.rs:parse_print}}
 ```
 
 [`expect-test`]: https://crates.io/crates/expect-test

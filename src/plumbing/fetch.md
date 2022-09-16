@@ -3,7 +3,7 @@
 # fetch
 
 ```rust,no_run,noplayground
-{{#include ../../../src/plumbing.rs:fetch}}
+{{#include ../../salsa/src/plumbing.rs:fetch}}
 ```
 
 `fetch` 方法计算查询的值。最好在可能的情况下重复使用已记忆的值。

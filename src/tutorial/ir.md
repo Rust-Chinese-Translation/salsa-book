@@ -37,7 +37,7 @@ Salsa 结构体是使用一种 Salsa 属性宏进行了标注的结构体：
 把带有 `#[salsa::input]` 属性的 Rust 结构体叫做输入 (input)：
 
 ```rust
-{{#include ../../../calc-example/calc/src/ir.rs:input}}
+{{#include ../../salsa/examples-2022/calc/src/ir.rs:input}}
 ```
 
 我们的编译器中只有一个简单的输入，即 `SourceProgram`，它有一个字段 `text` （字符串）。
@@ -80,7 +80,7 @@ let source = SourceProgram::new(&mut db, "print 11 + 11".to_string());
 在本例中，解析器将接收 `SourceProgram` 结构体，并返回一个表示完全解析过的程序 `Program`：
 
 ```rust
-{{#include ../../../calc-example/calc/src/ir.rs:program}}
+{{#include ../../salsa/examples-2022/calc/src/ir.rs:program}}
 ```
 
 与输入一样的是，跟踪结构体的字段也存储在数据库中。
@@ -99,7 +99,7 @@ let source = SourceProgram::new(&mut db, "print 11 + 11".to_string());
 我们还将使用跟踪结构体来表示每个函数：定义一个跟踪结构体 `Function` 来表示用户定义的每个函数：
 
 ```rust
-{{#include ../../../calc-example/calc/src/ir.rs:functions}}
+{{#include ../../salsa/examples-2022/calc/src/ir.rs:functions}}
 ```
 
 与输入一样的是，跟踪结构体的字段也存储在数据库中。
@@ -139,7 +139,7 @@ let source = SourceProgram::new(&mut db, "print 11 + 11".to_string());
 因此，我们定义了两个驻留结构体 `FunctionId` 和 `VariableId`，每个结构体都有一个存储字符串的字段：
 
 ```rust
-{{#include ../../../calc-example/calc/src/ir.rs:interned_ids}}
+{{#include ../../salsa/examples-2022/calc/src/ir.rs:interned_ids}}
 ```
 
 例如，当你调用 `FunctionId::new(&db, "my_string".to_string())` 时，它将返回一个 `FunctionId` —— 
@@ -170,7 +170,7 @@ assert_eq!(f1, f2);
 我们不会对表达式和语句使用任何特殊的“salsa 结构”：
 
 ```rust
-{{#include ../../../calc-example/calc/src/ir.rs:statements_and_expressions}}
+{{#include ../../salsa/examples-2022/calc/src/ir.rs:statements_and_expressions}}
 ```
 
 由于不跟踪语句和表达式，这意味着我们只尝试在函数的颗粒度上获得增量复用 ——

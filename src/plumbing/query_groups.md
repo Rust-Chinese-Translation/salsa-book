@@ -3,7 +3,7 @@
 When you define a query group trait:
 
 ```rust,ignore
-{{#include ../../../examples/hello_world/main.rs:trait}}
+{{#include ../../salsa/examples/hello_world/main.rs:trait}}
 ```
 
 the `salsa::query_group` macro generates a number of things, shown in the sample
@@ -151,7 +151,7 @@ a bunch of metadata about the query (and repeats, for convenience,
 some of the data about the group that the query is in):
 
 ```rust,ignore
-{{#include ../../../components/salsa-macros/src/query_group.rs:Query_impl}}
+{{#include ../../salsa/components/salsa-macros/src/query_group.rs:Query_impl}}
 ```
 
 Depending on the kind of query, we may also generate other impls, such as an
@@ -160,7 +160,7 @@ executing the body of a query. This impl would then include a call to the user's
 actual function.
 
 ```rust,ignore
-{{#include ../../../components/salsa-macros/src/query_group.rs:QueryFunction_impl}}
+{{#include ../../salsa/components/salsa-macros/src/query_group.rs:QueryFunction_impl}}
 ```
 
 ## Group storage
@@ -182,7 +182,7 @@ the group index as a parameter and passes it along to each of the query
 storage `new` methods:
 
 ```rust,ignore
-{{#include ../../../components/salsa-macros/src/query_group.rs:group_storage_new}}
+{{#include ../../salsa/components/salsa-macros/src/query_group.rs:group_storage_new}}
 ```
 
 And then various methods that will dispatch from a `DatabaseKeyIndex` that
@@ -191,5 +191,5 @@ Each has a similar structure of matching on the query index and then delegating
 to some method defined by the query storage:
 
 ```rust,ignore
-{{#include ../../../components/salsa-macros/src/query_group.rs:group_storage_methods}}
+{{#include ../../salsa/components/salsa-macros/src/query_group.rs:group_storage_methods}}
 ```

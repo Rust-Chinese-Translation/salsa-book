@@ -12,7 +12,7 @@
 [`db` 模块]: https://github.com/salsa-rs/salsa/blob/master/calc-example/calc/src/db.rs
 
 ```rust
-{{#include ../../../calc-example/calc/src/db.rs:db_struct}}
+{{#include ../../salsa/examples-2022/calc/src/db.rs:db_struct}}
 ```
 
 `#[salsa::db(...)]` 属性把要包含的所有 Jars 作为参数。
@@ -28,7 +28,7 @@
 除了结构体本身，我们还必须添加一个 `salsa::Database` 实现：
 
 ```rust
-{{#include ../../../calc-example/calc/src/db.rs:db_impl}}
+{{#include ../../salsa/examples-2022/calc/src/db.rs:db_impl}}
 ```
 
 ## 实现 `salsa::ParallDatabase` trait
@@ -36,7 +36,7 @@
 如果你想要允许同时从多个线程访问数据库，那么你还需要实现 `ParallDatabase` trait：
 
 ```rust
-{{#include ../../../calc-example/calc/src/db.rs:par_db_impl}}
+{{#include ../../salsa/examples-2022/calc/src/db.rs:par_db_impl}}
 ```
 
 ## 实现 `Default` trait
@@ -44,7 +44,7 @@
 这不是必需的，但实现 `Default` 通常是让使用者实例化你的数据库的一种便捷方式：
 
 ```rust
-{{#include ../../../calc-example/calc/src/db.rs:default_impl}}
+{{#include ../../salsa/examples-2022/calc/src/db.rs:default_impl}}
 ```
 
 ## 给每个 Jar 实现 traits

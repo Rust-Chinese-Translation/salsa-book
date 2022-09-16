@@ -5,7 +5,7 @@
 每个查询存储结构体都实现了 [`plumbing`] 模块中的 `QueryStorageOps` trait：
 
 ```rust,no_run,noplayground
-{{#include ../../../src/plumbing.rs:QueryStorageOps}}
+{{#include ../../salsa/src/plumbing.rs:QueryStorageOps}}
 ```
 
 它定义了所有查询支持的基本操作。最重要的是这两点：

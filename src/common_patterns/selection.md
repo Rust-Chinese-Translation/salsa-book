@@ -12,7 +12,7 @@
 例如，假设你有一个 `parse` 查询，它解析请求的输入文本，并返回一个 `ParsedResult`，其中包含头信息 (header) 和主体信息 (body)：
 
 ```rust,ignore
-{{#include ../../../examples/selection/main.rs:request}} 
+{{#include ../../salsa/examples/selection/main.rs:request}} 
 ```
 
 ## 示例：选择查询
@@ -20,7 +20,7 @@
 现在，你有许多派生查询，它们只查看标题。例如，可以提取 `Content-Type` 的 header：
 
 ```rust,ignore
-{{#include ../../../examples/selection/util1.rs:util1}} 
+{{#include ../../salsa/examples/selection/util1.rs:util1}} 
 ```
 
 ## 为什么更推荐选择查询？
@@ -46,7 +46,7 @@ request_text  -->  parse  -->  content_type  -->  (other queries)
 事实上，在我们的示例中，可能会考虑引入另一个级别的选择。与其让 `content_type` 直接访问 `parse` 的结果，不如插入一个只提取 header 的选择查询：
 
 ```rust,ignore
-{{#include ../../../examples/selection/util2.rs:util2}} 
+{{#include ../../salsa/examples/selection/util2.rs:util2}} 
 ```
 
 这将产生如下所示的依赖关系图：
