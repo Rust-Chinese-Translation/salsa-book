@@ -1,0 +1,42 @@
+[book]
+authors = ["Salsa Contributors"]
+multilingual = true
+src = "src"
+title = "Salsa（中文介绍）"
+
+[build]
+create-missing = false
+
+# [preprocessor.theme]
+# pagetoc = true
+# sidebar-width = "280px"
+# sidebar-font-size = "0.9em"
+# nav-chapters-max-width = "3%"
+# nav-chapters-min-width = "3%"
+
+[output.html.fold]
+enable = false
+level = 1
+
+[output.html.playground]
+editable = false
+
+[output.html.print]
+enable = false
+
+[preprocess.links]
+
+[output.html]
+default-theme = "ayu"
+git-repository-url = "https://github.com/zjp-CN/salsa/tree/Chinese"
+edit-url-template = "https://github.com/zjp-CN/salsa/edit/Chinese/book/{path}"
+additional-css =["mermaid.css", "theme/pagetoc.css"]
+additional-js =["mermaid.min.js", "mermaid-init.js", "theme/pagetoc.js"]
+
+[output.linkcheck]
+# follow-web-links = true --- this is commented out b/c of false errors
+traverse-parent-directories = false
+exclude = ['bilibili\.com']
+[preprocessor]
+[preprocessor.mermaid]
+command = "mdbook-mermaid"
