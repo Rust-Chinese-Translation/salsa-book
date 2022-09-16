@@ -12,7 +12,7 @@ Salsa 定义了一种称为 **累加器** (accumulator) 的管理机制。
 在我们的例子中，在 `ir` 模块中定义了一个名为 `Diagnotics` 的累加器结构体：
 
 ```rust
-{{#include ../../../calc-example/calc/src/ir.rs:diagnostic}}
+{{#include ../../salsa/examples-2022/calc/src/ir.rs:diagnostic}}
 ```
 
 累加器结构体始终是具有单个字段的 newtype 结构体，在本例中为 `Diagnotics` 类型。
@@ -24,7 +24,7 @@ Salsa 定义了一种称为 **累加器** (accumulator) 的管理机制。
 `Parser::report_error` 方法有一个推送诊断的示例：
 
 ```rust
-{{#include ../../../calc-example/calc/src/parser.rs:report_error}}
+{{#include ../../salsa/examples-2022/calc/src/parser.rs:report_error}}
 ```
 
 调用关联函数 `accumulated` 来获得由 `parse_errors` 或任何其他记忆函数生成的诊断集，：

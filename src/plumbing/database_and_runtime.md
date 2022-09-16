@@ -52,13 +52,13 @@ Salsa 的一般模型是，数据库只有一个“主”副本，可能还有�
 通过 `jars_mut` 方法获取数据库的 `&mut` 访问权限：
 
 ```rust,ignore
-{{#include ../../../components/salsa-2022/src/storage.rs:jars_mut}}
+{{#include ../../salsa/components/salsa-2022/src/storage.rs:jars_mut}}
 ```
 
 关键的一点是它在往下之前调用 `cancel_other_workers`：
 
 ```rust,ignore
-{{#include ../../../components/salsa-2022/src/storage.rs:cancel_other_workers}}
+{{#include ../../salsa/components/salsa-2022/src/storage.rs:cancel_other_workers}}
 ```
 
 ## Salsa 运行时

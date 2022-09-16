@@ -21,7 +21,7 @@
 解析器的起点是 `parse_statements` 函数：
 
 ```rust
-{{#include ../../../calc-example/calc/src/parser.rs:parse_statements}}
+{{#include ../../salsa/examples-2022/calc/src/parser.rs:parse_statements}}
 ```
 
 此函数标注了 `#[salsa::traced]`。这意味着，当它被调用时， Salsa 将跟踪它读取的输入以及返回的值。

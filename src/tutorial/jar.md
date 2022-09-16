@@ -25,7 +25,7 @@
 给一个元组结构体使用 `#[salsa::jar]` 属性来定义 Jar 结构体：
 
 ```rust
-{{#include ../../../calc-example/calc/src/main.rs:jar_struct}}
+{{#include ../../salsa/examples-2022/calc/src/main.rs:jar_struct}}
 ```
 
 虽然这不是必需的，但强烈建议：将 `Jar` 结构放在你的 crate 的根模块，这样它就可以通过 `crate::Jar` 路径使用。
@@ -43,7 +43,7 @@ Salsa 程序从不直接引用数据库；相反，它们使用 `&dyn Db` 参数
 我们的 `calc` crate 的数据库 trait 非常简单：
 
 ```rust
-{{#include ../../../calc-example/calc/src/main.rs:jar_db}}
+{{#include ../../salsa/examples-2022/calc/src/main.rs:jar_db}}
 ```
 
 当你定义像 `Db` 这样的数据库 trait 时，需要做的一件事是，它必须有一个 supertrait `salsa::DbWithJar<Jar>`，其中 `Jar` 是 Jar 结构体。
@@ -66,7 +66,7 @@ Salsa 程序从不直接引用数据库；相反，它们使用 `&dyn Db` 参数
 blanket impl，像这样：
 
 ```rust
-{{#include ../../../calc-example/calc/src/main.rs:jar_db_impl}}
+{{#include ../../salsa/examples-2022/calc/src/main.rs:jar_db_impl}}
 ```
 
 ## 总结

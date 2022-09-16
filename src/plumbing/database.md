@@ -4,7 +4,7 @@ Continuing our dissection, the other thing which a user must define is a
 **database**, which looks something like this:
 
 ```rust,ignore
-{{#include ../../../examples/hello_world/main.rs:database}}
+{{#include ../../salsa/examples/hello_world/main.rs:database}}
 ```
 
 The `salsa::database` procedural macro takes a list of query group
@@ -52,7 +52,7 @@ The `HasQueryGroup` trait allows a given query group to access its definition
 within the greater database. The impl is generated here:
 
 ```rust,ignore
-{{#include ../../../components/salsa-macros/src/database_storage.rs:HasQueryGroup}}
+{{#include ../../salsa/components/salsa-macros/src/database_storage.rs:HasQueryGroup}}
 ```
 
 The `HasQueryGroup` impl combines with [the blanket impl] from the
@@ -67,7 +67,7 @@ query methods and the like.
 Then there are a variety of other impls, like this one for `DatabaseStorageTypes`:
 
 ```rust,ignore
-{{#include ../../../components/salsa-macros/src/database_storage.rs:DatabaseStorageTypes}}
+{{#include ../../salsa/components/salsa-macros/src/database_storage.rs:DatabaseStorageTypes}}
 ```
 
 ## The `DatabaseOps` impl
@@ -77,5 +77,5 @@ invoke an operation on every kind of query in the database. It ultimately
 delegates to the `for_each` methods for the groups:
 
 ```rust,ignore
-{{#include ../../../components/salsa-macros/src/database_storage.rs:DatabaseOps}}
+{{#include ../../salsa/components/salsa-macros/src/database_storage.rs:DatabaseOps}}
 ```

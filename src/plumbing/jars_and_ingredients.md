@@ -116,7 +116,7 @@ struct MyDatabase {
 `salsa::db` 宏将生成一个包含 `type Jars = (Jar1, ..., JarN)` 的 `HasJars` 实现。
 
 ```rust,ignore
-{{#include ../../../components/salsa-2022-macros/src/db.rs:HasJars}}
+{{#include ../../salsa/components/salsa-2022-macros/src/db.rs:HasJars}}
 ```
 
 反过来说，`salsa::Storage<DB>` 类型最终包含一个嵌入 `DB::Jars` 的 `Shared` 结构体，从而嵌入每个 Jar 的所有数据。
@@ -140,7 +140,7 @@ struct MyDatabase {
 `DatabaseKeyIndex` 标识了存储在特定配料中的特定值。它结合了 [`IngredientIndex`] 与 `key_index`，其中 `key_index` 为 `salsa::Id`：
 
 ```rust,ignore
-{{#include ../../../components/salsa-2022/src/key.rs:DatabaseKeyIndex}}
+{{#include ../../salsa/components/salsa-2022/src/key.rs:DatabaseKeyIndex}}
 ```
 
 `DependencyIndex` 类似，但 `key_index` 是可选的。有时当我们希望引用整个配料而不是配料中的任何特定值时，可以使用这种方法。
@@ -173,7 +173,7 @@ Jars，因此任何一个单独的 Jar crate 都不知道。
 我们通过 `HasJarsDyn` trait 来解决这个问题。`HasJarsDyn` trait 导出一个将“查找配料，调用方法”的步骤合并起来的方法：
 
 ```rust,ignore aasaaasdfijjAasdfa
-{{#include ../../../components/salsa-2022/src/storage.rs:HasJarsDyn}}
+{{#include ../../salsa/components/salsa-2022/src/storage.rs:HasJarsDyn}}
 ```
 
 因此，从技术上讲，要检查一个输入是否发生了变化，一种配料：
@@ -189,19 +189,19 @@ Jars，因此任何一个单独的 Jar crate 都不知道。
 最后要讨论的是数据库是如何初始化的。`Storage<DB>` 的 `Default` 实现是这样的：
 
 ```rust,ignore
-{{#include ../../../components/salsa-2022/src/storage.rs:default}}
+{{#include ../../salsa/components/salsa-2022/src/storage.rs:default}}
 ```
 
 首先，它创建一个空的 `Routes` 实例。然后调用 `DB::create_jars` 方法，此方法的实现由 `#[salsa::db]` 宏定义；它只是在每个 Jar 上调用 `Jar::create_jar` 方法：
 
 ```rust,ignore
-{{#include ../../../components/salsa-2022-macros/src/db.rs:create_jars}}
+{{#include ../../salsa/components/salsa-2022-macros/src/db.rs:create_jars}}
 ```
 
 `create_jar` 这个实现由 `#[salsa::jar]` 宏生成，它只是遍历每个 Salsa 条目的所表示的类型，并要求它创建其配料
 
 ```rust,ignore
-{{#include ../../../components/salsa-2022-macros/src/jar.rs:create_jar}}
+{{#include ../../salsa/components/salsa-2022-macros/src/jar.rs:create_jar}}
 ```
 
 为任何特定条目创建配料的代码由相关的宏生成（例如 `#[salsa::traced]`、`#[salsa::input]`），但它始终遵循特定的结构。

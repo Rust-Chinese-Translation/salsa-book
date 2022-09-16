@@ -18,11 +18,11 @@ The main parts of the source that we are focused on are as follows.
 ### Query group
 
 ```rust,ignore
-{{#include ../../../examples/hello_world/main.rs:trait}}
+{{#include ../../salsa/examples/hello_world/main.rs:trait}}
 ```
 
 ### Database
 
 ```rust,ignore
-{{#include ../../../examples/hello_world/main.rs:database}}
+{{#include ../../salsa/examples/hello_world/main.rs:database}}
 ```
