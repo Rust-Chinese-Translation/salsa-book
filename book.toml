@@ -30,8 +30,8 @@ enable = false
 default-theme = "ayu"
 git-repository-url = "https://github.com/zjp-CN/salsa/tree/Chinese"
 edit-url-template = "https://github.com/zjp-CN/salsa/edit/Chinese/book/{path}"
-additional-css =["mermaid.css", "theme/pagetoc.css"]
-additional-js =["mermaid.min.js", "mermaid-init.js", "theme/pagetoc.js"]
+additional-css = ["theme/mermaid.css", "theme/pagetoc.css"]
+additional-js = ["theme/mermaid.min.js", "theme/mermaid-init.js", "theme/pagetoc.js"]
 
 [output.linkcheck]
 # follow-web-links = true --- this is commented out b/c of false errors
