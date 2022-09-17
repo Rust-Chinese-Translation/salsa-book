@@ -1,5 +1,3 @@
-<!-- master#1363d78 --->
-
 # 教程：calc 语言
 
 {{#include caveat.md}}

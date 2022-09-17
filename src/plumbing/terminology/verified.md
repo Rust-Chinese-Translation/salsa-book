@@ -1,5 +1,3 @@
-<!-- master#68cb5e9 --->
-
 # Verified
 
 如果 Salsa 已经检查到 [memo] 的值仍然是最新的（即，如果重新执行 [query function] 会保证得到相同的结果），则 memo 在修订版 R 中被验证。

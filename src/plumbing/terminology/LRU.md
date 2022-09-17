@@ -1,5 +1,3 @@
-<!-- master#68cb5e9 --->
-
 # LRU
 
 [`set_lru_capacity`] 方法可用于将查询的最大容量固定为特定数量的值。

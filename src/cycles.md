@@ -1,5 +1,3 @@
-<!-- master#657b856 --->
-
 # 处理循环
 
 默认情况下，当 Salsa 在计算图中检测到循环时，Salsa 会将 [`salsa::Cycle`] 的值作为 panic 的值。

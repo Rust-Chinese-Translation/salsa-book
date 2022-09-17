@@ -1,5 +1,3 @@
-<!-- master#1363d78 --->
-
 # 定义 IR
 
 在定义[解析器]之前，我们需要定义用于 `calc` 程序的 IR (Intermediate Representation， 中间表示)。

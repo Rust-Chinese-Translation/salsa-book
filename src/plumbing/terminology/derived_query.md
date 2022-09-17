@@ -1,5 +1,3 @@
-<!-- master#68cb5e9 --->
-
 # Derived query
 
 派生查询 (derived query) ：指一种这样的查询 ([query])，它的值由使用者所提供的 [query function] 的结果确定。

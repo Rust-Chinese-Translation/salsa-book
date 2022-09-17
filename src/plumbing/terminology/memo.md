@@ -1,5 +1,3 @@
-<!-- master#68cb5e9 --->
-
 # Memo
 
 memo 存储有关上次执行某个查询 ([query]) Q 的 [query function] 的信息：

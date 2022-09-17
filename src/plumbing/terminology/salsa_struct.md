@@ -1,5 +1,3 @@
-<!-- master#68cb5e9 --->
-
 # Salsa struct
 
 Salsa struct 是用以下一种 Salsa 宏装饰的结构体：

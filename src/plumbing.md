@@ -1,5 +1,3 @@
-<!-- master#657b856 --->
-
 # 管道
 
 {{#include caveat.md}}

@@ -1,5 +1,3 @@
-<!-- master#657b856 --->
-
 # 选择
 
 “选择 (selection) ”（或“防火墙 (firewall) ”）模式是指当你有一个从其他 Qbase 读取的查询 Qsel，并从 Qsel 返回的 Qbase 中提取一些小信息。

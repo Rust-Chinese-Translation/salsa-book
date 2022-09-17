@@ -1,5 +1,3 @@
-<!-- master#68cb5e9 --->
-
 # Untracked dependency
 
 未跟踪的依赖项 (untracked dependency)：指派生查询 ([derived query]) 的结果依赖于 Salsa 数据库不可见的内容。

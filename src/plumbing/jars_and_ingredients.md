@@ -1,5 +1,3 @@
-<!-- master#657b856 --->
-
 # Jar 和配料
 
 {{#include ../caveat.md}}

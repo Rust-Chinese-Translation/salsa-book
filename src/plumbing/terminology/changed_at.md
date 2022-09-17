@@ -1,5 +1,3 @@
-<!-- master#68cb5e9 --->
-
 # Changed at
 
 [memo] 的 changed_at 修订版本 ([revision]) 是指 memo 的值上次更改所在的修订版本。

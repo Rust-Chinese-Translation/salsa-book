@@ -1,5 +1,3 @@
-<!-- master#68cb5e9 --->
-
 # 在某个修订之后可能已更改
 
 ```rust,no_run,noplayground

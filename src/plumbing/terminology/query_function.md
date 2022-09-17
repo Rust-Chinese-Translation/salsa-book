@@ -1,5 +1,3 @@
-<!-- master#68cb5e9 --->
-
 # Query function
 
 查询函数 (query function)：指使用者提供的函数，Salsa 执行该函数来计算派生查询 ([derived query]) 的值。

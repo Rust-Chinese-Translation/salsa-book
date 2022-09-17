@@ -1,5 +1,3 @@
-<!-- master#68cb5e9 --->
-
 # fetch
 
 ```rust,no_run,noplayground

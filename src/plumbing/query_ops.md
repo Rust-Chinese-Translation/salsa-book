@@ -1,5 +1,3 @@
-<!-- master#657b856 --->
-
 # 查询操作
 
 每个查询存储结构体都实现了 [`plumbing`] 模块中的 `QueryStorageOps` trait：
