@@ -28,8 +28,8 @@ enable = false
 
 [output.html]
 default-theme = "ayu"
-git-repository-url = "https://github.com/zjp-CN/salsa/tree/Chinese"
-edit-url-template = "https://github.com/zjp-CN/salsa/edit/Chinese/book/{path}"
+git-repository-url = "https://github.com/Rust-Chinese-Translation/salsa-book/tree/main"
+edit-url-template = "https://github.com/Rust-Chinese-Translation/salsa-book/edit/main/book/{path}"
 additional-css = ["theme/mermaid.css", "theme/pagetoc.css"]
 additional-js = ["theme/mermaid.min.js", "theme/mermaid-init.js", "theme/pagetoc.js"]
 
