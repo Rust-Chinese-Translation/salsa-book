@@ -22,7 +22,7 @@
 {{#include ../../salsa/examples-2022/calc/src/parser.rs:parse_statements}}
 ```
 
-此函数标注了 `#[salsa::traced]`。这意味着，当它被调用时， Salsa 将跟踪它读取的输入以及返回的值。
+此函数标注了 `#[salsa::tracked]`。这意味着，当它被调用时， Salsa 将跟踪它读取的输入以及返回的值。
 
 返回值被存储下来 (memoized)，这意味着如果再次调用此函数而不更改输入， Salsa 将只克隆结果，而不是重新执行这个函数。
 
@@ -38,7 +38,7 @@ Salsa 使用[红-绿算法](../reference/algorithm.md)来决定何时重新执�
 
 在 `parse_statements` 的情况下，它直接读取 `ProgramSource::text`，所以如果文本发生变化，那么解析器将重新执行。
 
-通过选择将那些标记了 `#[traced]` 的函数，你可以控制获得多少复用。
+通过选择将那些标记了 `#[tracked]` 的函数，你可以控制获得多少复用。
 
 这个例子中，我们选择将最外层的解析函数标记为跟踪的，而不是内层的。
 
@@ -56,7 +56,7 @@ Salsa 使用[红-绿算法](../reference/algorithm.md)来决定何时重新执�
 
 ### 跟踪函数的参数
 
-跟踪函数 (traced function) 的第一个参数始终是数据库 `db: &dyn crate::db`。它必须是与 Jar 有关的任何数据库的 `dyn` 值。
+跟踪函数 (tracked function) 的第一个参数始终是数据库 `db: &dyn crate::db`。它必须是与 Jar 有关的任何数据库的 `dyn` 值。
 
 跟踪函数的第二个参数始终是某种 Salsa 结构。
 
@@ -66,7 +66,7 @@ Salsa 使用[红-绿算法](../reference/algorithm.md)来决定何时重新执�
 
 ### `#[tracked(return_ref)]`
 
-你可能已经注意到， `parse_statements` 被标记为 `#[salsa::traced(return_ref)]`。
+你可能已经注意到， `parse_statements` 被标记为 `#[salsa::tracked(return_ref)]`。
 
 通常，当你调用跟踪函数时，你得到的结果会从数据库中克隆出来。而该属性表示返回对数据库的引用。
 
