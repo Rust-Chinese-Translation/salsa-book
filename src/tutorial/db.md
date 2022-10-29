@@ -19,7 +19,7 @@
 
 `storage` 结构体拥有 `db` 属性中列出的 Jars 的所有数据。
 
-`#[salsa::db(...)]` 属性为我们前面看到的 `salsa::HasJar<crate::Jar>` trait 自动生成一组实现。这意味着要
+`#[salsa::db(...)]` 属性为我们前面看到的 `salsa::HasJar<crate::Jar>` trait 自动生成一组实现。
 
 ## 实现 `salsa::Database` trait
 
